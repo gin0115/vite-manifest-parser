@@ -28,17 +28,14 @@ jobs:
       - name: Check PHP Version
         run: php -v
 
-      - name: Clear existing composer
-        run: rm -rf wordpress && rm -rf vendor && rm -rf composer.lock 
-
       - name: Validate composer.json and composer.lock
         run: composer validate
 
       - name: Install dependencies
-        run: composer clearcache && rm -rf composer.lock && composer install --prefer-dist --no-suggest
+        run: composer clearcache && composer install --prefer-dist --no-suggest
 
       - name: Run Tests
         run: composer all
 
       - name: Codecov
-        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_PIXIE }}
+        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.VITE_CODECOV }}
