@@ -31,17 +31,13 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate
 
-      - name:  Install
-        run:   |
-         if [ matrix.operating-system == 'ubuntu-latest' ]; then
-              rm -rf composer.lock
-         elif [ matrix.operating-system == 'windows-latest' ]; then
-              del composer.lock
-         else
-              echo "$RUNNER_OS not supported"
-              exit 1
-         fi
-        shell: bash
+      - name: Remove lock file for linux
+        if: runner.os == 'Linux'
+        run: rm -rf composer.lock
+
+      - name: Remove lock file for windows
+        if: runner.os == 'Windows'
+        run: del composer.lock
 
       - name: Install dependencies
         run: composer clearcache && composer install --prefer-dist --no-suggest
