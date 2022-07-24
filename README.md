@@ -1,8 +1,9 @@
 [![GitHub_CI](https://github.com/gin0115/vite-manifest-parser/actions/workflows/cli.yaml/badge.svg)](https://github.com/gin0115/vite-manifest-parser/actions/workflows/cli.yaml)
-[![GitHub issues](https://img.shields.io/github/release/vite-manifest-parser)](https://github.com/vite-manifest-parser/releases)
+[![GitHub current release](https://img.shields.io/github/release/vite-manifest-parser)](https://github.com/vite-manifest-parser/releases)
 ![](https://github.com/vite-manifest-parser/workflows/GitHub_CI/badge.svg " ")
 [![codecov](https://codecov.io/gh/gin0115/vite-manifest-parser/branch/main/graph/badge.svg?token=1I2UJW717H)](https://codecov.io/gh/gin0115/vite-manifest-parser)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vite-manifest-parser/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vite-manifest-parser/?branch=master)
+[![GitHub issues](https://img.shields.io/github/issues/vite-manifest-parser)](https://github.com/vite-manifest-parser/issues)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)]()
 
 An expressive, query builder for WordPRess it can also be referred as a Database Abstraction Layer. Pixie WPDB supports WPDB ONLY and it takes care of query sanitization, table prefixing and many other things with a unified API.
