@@ -1,0 +1,12 @@
+parameters:
+    level: 8
+    inferPrivatePropertyTypeFromConstructor: true
+    paths:
+        - %currentWorkingDirectory%/src/
+    excludePaths:
+        - %currentWorkingDirectory%/tests/*
+    parallel:
+        processTimeout: 300.0
+        jobSize: 10
+        maximumNumberOfProcesses: 4
+        minimumNumberOfJobsPerProcess: 4
