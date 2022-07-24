@@ -33,9 +33,9 @@ jobs:
 
       - name:  Install
         run:   |
-         if [ matrix.os == 'ubuntu-latest' ]; then
+         if [ matrix.operating-system == 'ubuntu-latest' ]; then
               rm -rf composer.lock
-         elif [ matrix.os == 'windows-latest' ]; then
+         elif [ matrix.operating-system == 'windows-latest' ]; then
               del composer.lock
          else
               echo "$RUNNER_OS not supported"
@@ -44,7 +44,7 @@ jobs:
         shell: bash
 
       - name: Install dependencies
-        run: composer clearcache  && composer install --prefer-dist --no-suggest
+        run: composer clearcache && composer install --prefer-dist --no-suggest
 
       - name: Run Tests
         run: composer all
