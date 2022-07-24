@@ -31,8 +31,20 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate
 
+      - name:  Install
+        run:   |
+         if [ matrix.os == 'ubuntu-latest' ]; then
+              rm -rf composer.lock
+         elif [ matrix.os == 'windows-latest' ]; then
+              del composer.lock
+         else
+              echo "$RUNNER_OS not supported"
+              exit 1
+         fi
+        shell: bash
+
       - name: Install dependencies
-        run: composer clearcache && composer install --prefer-dist --no-suggest
+        run: composer clearcache  && composer install --prefer-dist --no-suggest
 
       - name: Run Tests
         run: composer all
