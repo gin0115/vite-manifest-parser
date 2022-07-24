@@ -151,7 +151,7 @@ class ManifestParser
         }
 
         return \array_key_exists('file', $assets)
-            ? sprintf('%s%s%s', $this->assetsUri, \DIRECTORY_SEPARATOR, $assets['file'])
+            ? sprintf('%s%s%s', $this->assetsUri, '/', $assets['file'])
             : null;
     }
 
@@ -171,7 +171,7 @@ class ManifestParser
 
         return \array_key_exists('css', $assets)
             ? \array_map(function ($css) {
-                return sprintf('%s%s%s', $this->assetsUri, \DIRECTORY_SEPARATOR, $css);
+                return sprintf('%s%s%s', $this->assetsUri, '/', $css);
             }, $assets['css'])
             : [];
     }
