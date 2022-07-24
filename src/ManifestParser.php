@@ -62,7 +62,7 @@ class ManifestParser
     public function __construct(string $assetsUri, string $manifestPath)
     {
         // Set the assets URI, but remove any trailing slashes.
-        $this->assetsUri = rtrim($assetsUri, \DIRECTORY_SEPARATOR);
+        $this->assetsUri = rtrim($assetsUri, '/');
         $this->manifestPath = $manifestPath;
     }
 
