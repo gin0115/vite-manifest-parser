@@ -48,7 +48,7 @@ jobs:
 
       - name: Run Tests (Windows)
         if: runner.os == 'Windows'
-        run: vendor\bin\phpunit && composer analyse && vendor\bin\php-cs-fixer fix --diff --dry-run --rules=@PSR12 --show-progress=dots --stop-on-violation
+        run: vendor\bin\phpunit && composer analyse
 
       - name: Codecov
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.VITE_CODECOV }}
