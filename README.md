@@ -2,7 +2,7 @@
 [![GitHub current release](https://img.shields.io/github/release/gin0115/vite-manifest-parser)](https://github.com/gin0115/vite-manifest-parser/releases)
 ![](https://github.com/vite-manifest-parser/workflows/GitHub_CI/badge.svg " ")
 [![codecov](https://codecov.io/gh/gin0115/vite-manifest-parser/branch/main/graph/badge.svg?token=1I2UJW717H)](https://codecov.io/gh/gin0115/vite-manifest-parser)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vite-manifest-parser/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vite-manifest-parser/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gin0115/vite-manifest-parser/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/gin0115/vite-manifest-parser/?branch=main)
 [![GitHub issues](https://img.shields.io/github/issues/gin0115/vite-manifest-parser)](https://github.com/gin0115/vite-manifest-parser/issues)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)]()
 
@@ -18,6 +18,7 @@ composer require gin0115/vite-manifest-parser
 
 To accommodate the random hash which is added to assets compiled for `vue 3` using `vite`, this library allows for the easy parsing of the required assets.
 
+> Example Vite Manifest
 ```json
 {
   "main.js": {
@@ -40,3 +41,8 @@ To accommodate the random hash which is added to assets compiled for `vue 3` usi
 }
 
 ```
+
+You can then access the assets using the following:
+
+```php
+$manifest = new ViteManifestParser('path/to/manifest.json', 'path/to/vite-cli/vite.json');
