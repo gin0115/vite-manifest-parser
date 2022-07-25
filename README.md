@@ -137,3 +137,16 @@ $fileDetails = $parser->getAssetsForVueFile('main.js');
 ## getEntryScriptUri  
 > @param string $fileName - The filename of the asset  
 > @return string|null - The url of the asset or null if file doesn't exist.  
+
+This will return just the main JS file uri, this will be prepended with the assetUri.
+
+```php
+$parser = new ViteManifestParser('https://www.url.tld/dist', 'path/to/project/vite.json');
+
+$mainJsUrl = $parser->getEntryScriptUri('main.js');
+
+// Returns https://www.url.tld/dist/assets/main.4889e940.js
+```
+
+> Unlike `getAssetsForVueFile()`, this will not throw exceptions if the file doesn't exist and will just return null.
+
