@@ -61,3 +61,34 @@ $cssFiles = $manifest->getEntryScriptCssUris('main.js');
 // ];
 
 ```
+
+# API
+
+## ViteManifestParser()
+
+The constructor takes 2 properties:
+* assetUri - The base url of the assets.
+* manifestPath - Path to the vite manifest file.
+
+```php
+$parser = new ViteManifestParser('https://www.url.tld/dist', 'path/to/project/vite.json');
+
+// This can also be used to set the base path, based on the environment.
+
+$assetUrl = App::environment('local')
+    ? 'http://localhost:8080/dist'
+    : 'https://www.url.tld/dist';
+
+$parser = new ViteManifestParser($assetUrl, 'path/to/project/vite.json');
+```
+
+## getAssetsUri
+
+Returns the defined assetUri with any trailing slash removed.
+
+```php
+$parser = new ViteManifestParser('https://www.url.tld/dist/', 'path/to/project/vite.json');
+
+$parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
+```
+
