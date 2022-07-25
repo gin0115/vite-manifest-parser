@@ -1,5 +1,5 @@
 [![GitHub_CI](https://github.com/gin0115/vite-manifest-parser/actions/workflows/cli.yaml/badge.svg)](https://github.com/gin0115/vite-manifest-parser/actions/workflows/cli.yaml)
-[![GitHub current release](https://img.shields.io/github/release/gin0115/vite-manifest-parser)](https://github.com/gin0115/vite-manifest-parser/releases)
+![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/gin0115/vite-manifest-parser?include_prereleases)
 ![](https://github.com/vite-manifest-parser/workflows/GitHub_CI/badge.svg " ")
 [![codecov](https://codecov.io/gh/gin0115/vite-manifest-parser/branch/main/graph/badge.svg?token=1I2UJW717H)](https://codecov.io/gh/gin0115/vite-manifest-parser)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gin0115/vite-manifest-parser/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/gin0115/vite-manifest-parser/?branch=main)
