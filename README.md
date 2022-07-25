@@ -102,15 +102,15 @@ $parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
 <details>
 <summary> File Asset properties </summary>
 
-* file: string  
-* src: string  
-* isEntry?: bool  
-* isDynamicEntry?: bool  
-* dynamicImports?: string[]  
-* css?: string[]  
-* assets?: string[]  
-* imports?: string[] 
- 
+* **file**: *string*  
+* **src**: *string*  
+* **isEntry**?: *bool*  
+* **isDynamicEntry**?: *bool*  
+* **dynamicImports**?: *string[] * 
+* **css**?: *string[] * 
+* **assets**?: *string[] * 
+* **imports**?: *string[] *
+   
 </details>
 
 Returns an array of all details defined in the manifest for the given vue file.
