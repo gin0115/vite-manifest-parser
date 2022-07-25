@@ -26,7 +26,7 @@ declare(strict_types=1);
 namespace Gin0115\ViteManifestParser;
 
 /**
- * @template ManifestFile of array{
+ * @template ManifestFile array{
  *     file: string,
  *     src: string,
  *     isEntry?: bool,
