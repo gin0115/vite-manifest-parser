@@ -120,6 +120,7 @@ Returns an array of all details defined in the manifest for the given vue file.
 $parser = new ViteManifestParser('https://www.url.tld/dist', 'path/to/project/vite.json');
 
 $fileDetails = $parser->getAssetsForVueFile('main.js');
+
 /* 
  * "file => "assets/main.4889e940.js",
  * "src => "main.js",
@@ -130,6 +131,8 @@ $fileDetails = $parser->getAssetsForVueFile('main.js');
  */
 
 ```
+> This will throw exceptions if there is an issue with the manifest file it self or the required file from manifest doesn't exist.
+
 
 ## getEntryScriptUri  
 > @param string $fileName - The filename of the asset  
