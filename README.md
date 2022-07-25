@@ -16,9 +16,10 @@ composer require gin0115/vite-manifest-parser
 
 # Usage
 
-To accommodate the random hash which is added to assets compiled for `vue 3` using `vite`, this library allows for the easy parsing of the required assets.
+To accommodate the random hash which is added to assets compiled for `vue 3` using `vite` , this library allows for the easy parsing of the required assets.
 
 > Example Vite Manifest
+
 ```json
 {
   "main.js": {
@@ -90,4 +91,3 @@ $parser = new ViteManifestParser('https://www.url.tld/dist/', 'path/to/project/v
 
 $parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
 ```
-
