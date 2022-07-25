@@ -104,7 +104,7 @@ $parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
 
 * **file**: *string*  
 * **src**: *string*  
-* **isEntry**?: *bool*  
+* **isEntry**?: *bool*  (optional)  
 * **isDynamicEntry**?: *bool*  (optional)
 * **dynamicImports**?: *string[]*   (optional)
 * **css**?: *string[]*   (optional)
@@ -116,6 +116,18 @@ $parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
 Returns an array of all details defined in the manifest for the given vue file.
 
 ```php
+
+$parser = new ViteManifestParser('https://www.url.tld/dist', 'path/to/project/vite.json');
+
+$fileDetails = $parser->getAssetsForVueFile('main.js');
+/* 
+ * "file => "assets/main.4889e940.js",
+ * "src => "main.js",
+ * "isEntry => true,
+ * "dynamicImports => ["views/foo.js"],
+ * "css => ["assets/main.b82dbe22.css"],
+ * "assets => ["assets/asset.0ab0f9cd.png"]
+ */
 
 ```
 
