@@ -63,4 +63,5 @@ jobs:
         run: vendor\bin\phpunit && composer analyse
 
       - name: Codecov
+        if: runner.os == 'Linux'
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.VITE_CODECOV }}
