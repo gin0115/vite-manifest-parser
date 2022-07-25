@@ -150,3 +150,20 @@ $mainJsUrl = $parser->getEntryScriptUri('main.js');
 
 > Unlike `getAssetsForVueFile()`, this will not throw exceptions if the file doesn't exist and will just return null.
 
+## getEntryCssUris
+> @param string $fileName - The filename of the asset  
+> @return  string[] - The urls of the css assets.  
+
+This will return all css files that are defined for the entry file. This will be prepended with the assetUri.
+
+```php
+$parser = new ViteManifestParser('https://www.url.tld/dist', 'path/to/project/vite.json');
+
+$cssFiles = $parser->getEntryCssUris('main.js');
+
+// Returns [
+//   'https://www.url.tld/dist/assets/main.b82dbe22.css'
+// ];
+```
+
+> Unlike `getAssetsForVueFile()`, this will not throw exceptions if the file doesn't exist and will just return an empty array.
