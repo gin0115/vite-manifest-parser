@@ -105,11 +105,11 @@ $parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
 * **file**: *string*  
 * **src**: *string*  
 * **isEntry**?: *bool*  
-* **isDynamicEntry**?: *bool*  
-* **dynamicImports**?: *string[]*   
-* **css**?: *string[]*   
-* **assets**?: *string[]*   
-* **imports**?: *string[]*  
+* **isDynamicEntry**?: *bool*  (optional)
+* **dynamicImports**?: *string[]*   (optional)
+* **css**?: *string[]*   (optional)
+* **assets**?: *string[]*   (optional)
+* **imports**?: *string[]*  (optional)
    
 </details>
 
