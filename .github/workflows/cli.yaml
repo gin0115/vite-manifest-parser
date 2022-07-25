@@ -24,6 +24,7 @@ jobs:
           extensions: mbstring, intl, pcov
           ini-values: post_max_size=256M, log_errors=1
           tools: pecl
+          coverage: pcov
 
       - name: Check PHP Version
         run: php -v

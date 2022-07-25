@@ -6,41 +6,37 @@
 [![GitHub issues](https://img.shields.io/github/issues/gin0115/vite-manifest-parser)](https://github.com/gin0115/vite-manifest-parser/issues)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)]()
 
-
-An expressive, query builder for WordPRess it can also be referred as a Database Abstraction Layer. Pixie WPDB supports WPDB ONLY and it takes care of query sanitization, table prefixing and many other things with a unified API.
-
-> **Pixie WPDB** is an adaption of `pixie` originally written by [usmanhalalit](https://github.com/usmanhalalit). [Pixie](https://github.com/usmanhalalit/pixie) is no longer under active development.
-
-# Features
-* [Fluent API](https://github.com/gin0115/pixie-wpdb/wiki/Query%20Methods)
-* [Nested Queries](https://github.com/gin0115/pixie-wpdb/wiki/Sub%20&%20Nested%20Queries)
-* [Multiple Connections](https://github.com/gin0115/pixie-wpdb/wiki/Home#setup-connection)
-* [Sub Queries](https://github.com/gin0115/pixie-wpdb/wiki/Sub%20&%20Nested%20Queries)
-* [JSON Support](https://github.com/gin0115/pixie-wpdb/wiki/Json%20Methods)
-* [Model Hydration](https://github.com/gin0115/pixie-wpdb/wiki/Result%20Hydration)
-* [Custom Alias Facade](https://github.com/gin0115/pixie-wpdb/wiki/Home#connection-alias)
-* [Raw SQL Expressions](https://github.com/gin0115/pixie-wpdb/wiki/Bindings%20&%20Raw%20Expressions)
-* [Value Type Binding](https://github.com/gin0115/pixie-wpdb/wiki/Bindings%20&%20Raw%20Expressions)
-* [Transaction Support](https://github.com/gin0115/pixie-wpdb/wiki/Transactions)
-* [Query Events](https://github.com/gin0115/pixie-wpdb/wiki/Query%20Events)
-
-```php
-$thing = QB::table('someTable')->where('something','=', 'something else')->first();
-```
+A basic parser for vite manifest file, which allows for the including of vue3-cli/vite projects in php.
 
 # Install
 
-## Perquisites
-
-* WordPress 5.7+ (tested upto 5.9)
-* PHP 7.1+ (includes support for PHP8)
-* MySql 5.7+ or MariaDB 10.2+
-* Composer (optional)
-
-## Using Composer
-
-The easiest way to include Pixie in your project is to use [composer](http://getcomposer.org/doc/00-intro.md#installation-nix). 
-
 ```bash
-composer require gin0115/pixie-wpdb
+composer require gin0115/vite-manifest-parser
+```
+
+# Usage
+
+To accommodate the random hash which is added to assets compiled for `vue 3` using `vite`, this library allows for the easy parsing of the required assets.
+
+```json
+{
+  "main.js": {
+    "file": "assets/main.4889e940.js",
+    "src": "main.js",
+    "isEntry": true,
+    "dynamicImports": ["views/foo.js"],
+    "css": ["assets/main.b82dbe22.css"],
+    "assets": ["assets/asset.0ab0f9cd.png"]
+  },
+  "views/foo.js": {
+    "file": "assets/foo.869aea0d.js",
+    "src": "views/foo.js",
+    "isDynamicEntry": true,
+    "imports": ["_shared.83069a53.js"]
+  },
+  "_shared.83069a53.js": {
+    "file": "assets/shared.83069a53.js"
+  }
+}
+
 ```
