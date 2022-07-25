@@ -82,7 +82,8 @@ $assetUrl = App::environment('local')
 $parser = new ViteManifestParser($assetUrl, 'path/to/project/vite.json');
 ```
 
-## getAssetsUri
+## getAssetsUri  
+> @return string The base url of the assets.  
 
 Returns the defined assetUri with any trailing slash removed.
 
@@ -91,3 +92,10 @@ $parser = new ViteManifestParser('https://www.url.tld/dist/', 'path/to/project/v
 
 $parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
 ```
+
+
+
+
+## getEntryScriptUri  
+> @param string $fileName - The filename of the asset  
+> @return string|null - The url of the asset or null if file doesn't exist.  
