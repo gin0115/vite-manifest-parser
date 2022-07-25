@@ -1,0 +1,7 @@
+vendor
+.DS_Store
+.idea
+.vscode
+clover.xml
+coverage-report
+.phpunit.result.cache

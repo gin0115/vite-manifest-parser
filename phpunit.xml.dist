@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<phpunit backupGlobals="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true">
+    <testsuites>
+        <testsuite name="gin0115_vite_manifest_parser">
+            <directory prefix="Test" suffix=".php">./tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+
+    <php>
+        <ini name="memory_limit" value="512M" />
+    </php>
+
+    <logging>
+        <log type="coverage-clover" target="clover.xml" />
+    </logging>
+</phpunit>
