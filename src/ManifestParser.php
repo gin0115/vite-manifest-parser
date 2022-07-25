@@ -161,7 +161,7 @@ class ManifestParser
      * @param string $file
      * @return string[]
      */
-    public function getEntryScriptCssUris(string $file): array
+    public function getEntryCssUris(string $file): array
     {
         try {
             $assets = $this->getAssetsForVueFile($file);

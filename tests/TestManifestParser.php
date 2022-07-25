@@ -244,8 +244,8 @@ class TestManifestParser extends TestCase
 
         $file = $this->createTempFile('testGetCssUris.json', \json_encode($manifest));
         $parser = new ManifestParser('http://example.com', $file);
-        $this->assertContains('http://example.com/assets/file.css', $parser->getEntryScriptCssUris('file.js'));
-        $this->assertContains('http://example.com/assets/file2.css', $parser->getEntryScriptCssUris('file.js'));
+        $this->assertContains('http://example.com/assets/file.css', $parser->getEntryCssUris('file.js'));
+        $this->assertContains('http://example.com/assets/file2.css', $parser->getEntryCssUris('file.js'));
 
         $this->removeTempFile('testGetCssUris.json');
     }
@@ -264,7 +264,7 @@ class TestManifestParser extends TestCase
 
         $file = $this->createTempFile('testGetCssUrisEmpty.json', \json_encode($manifest));
         $parser = new ManifestParser('http://example.com', $file);
-        $this->assertEmpty($parser->getEntryScriptCssUris('not.js'));
+        $this->assertEmpty($parser->getEntryCssUris('not.js'));
 
         $this->removeTempFile('testGetCssUrisEmpty.json');
     }
@@ -273,7 +273,7 @@ class TestManifestParser extends TestCase
     public function testGetCssUrisException()
     {
         $parser = new ManifestParser('http://example.com', 'i dont exist');
-        $this->assertEmpty($parser->getEntryScriptCssUris('file.js'));
+        $this->assertEmpty($parser->getEntryCssUris('file.js'));
     }
 
 

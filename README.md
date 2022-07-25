@@ -54,7 +54,7 @@ $mainJsUrl = $manifest->getEntryScriptUri('main.js');
 // Returns https://www.url.tld/dist/assets/main.4889e940.js
 
 // To access all CSS files.
-$cssFiles = $manifest->getEntryScriptCssUris('main.js');
+$cssFiles = $manifest->getEntryCssUris('main.js');
 
 // Returns [
 //   'https://www.url.tld/dist/assets/main.b82dbe22.css'
@@ -74,7 +74,6 @@ The constructor takes 2 properties:
 $parser = new ViteManifestParser('https://www.url.tld/dist', 'path/to/project/vite.json');
 
 // This can also be used to set the base path, based on the environment.
-
 $assetUrl = App::environment('local')
     ? 'http://localhost:8080/dist'
     : 'https://www.url.tld/dist';
