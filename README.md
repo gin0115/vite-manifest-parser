@@ -94,8 +94,8 @@ $parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
 ```
 
 ## getAssetsForVueFile  
-> @param string $fileName The name of the vue file.
-> @return array<string, string|string[]> The assets for the vue file.
+> @param string $fileName The name of the vue file.  
+> @return array<string, string|string[]> The assets for the vue file.  
 > @throws \Exception - File does not exist in manifest.  
 > @throws \Exception - File assets are empty or invalid.  
 
