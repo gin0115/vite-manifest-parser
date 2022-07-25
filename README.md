@@ -45,4 +45,19 @@ To accommodate the random hash which is added to assets compiled for `vue 3` usi
 You can then access the assets using the following:
 
 ```php
-$manifest = new ViteManifestParser('path/to/manifest.json', 'path/to/vite-cli/vite.json');
+$manifest = new ViteManifestParser('https://www.url.tld/dist', 'path/to/project/vite.json');
+
+// To access the main.js file url
+// Just pass in the file name.
+$mainJsUrl = $manifest->getEntryScriptUri('main.js');
+
+// Returns https://www.url.tld/dist/assets/main.4889e940.js
+
+// To access all CSS files.
+$cssFiles = $manifest->getEntryScriptCssUris('main.js');
+
+// Returns [
+//   'https://www.url.tld/dist/assets/main.b82dbe22.css'
+// ];
+
+```
