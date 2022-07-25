@@ -93,8 +93,31 @@ $parser = new ViteManifestParser('https://www.url.tld/dist/', 'path/to/project/v
 $parser->getAssetsUri(); // Returns 'https://www.url.tld/dist'
 ```
 
+## getAssetsForVueFile  
+> @param string $fileName The name of the vue file.
+> @return array<string, string|string[]> The assets for the vue file.
+> @throws \Exception - File does not exist in manifest.  
+> @throws \Exception - File assets are empty or invalid.  
 
+<details>
+<summary> File Asset properties </summary>
+ * @template ManifestFile of array{
+ *     file: string,
+ *     src: string,
+ *     isEntry?: bool,
+ *     isDynamicEntry?: bool,
+ *     dynamicImports?: string[],
+ *     css?: string[],
+ *     assets?: string[],
+ *     imports?: string[],
+ *  }
+</details>
 
+Returns an array of all details defined in the manifest for the given vue file.
+
+```php
+
+```
 
 ## getEntryScriptUri  
 > @param string $fileName - The filename of the asset  
